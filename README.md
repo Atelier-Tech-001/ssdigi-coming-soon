@@ -1,7 +1,5 @@
 # LSSDIGI - Landing "Coming Soon" Misteriosa
 
-**URL de despliegue:** [https://TUUSUARIO.github.io/ssdigi-coming-soon](https://TUUSUARIO.github.io/ssdigi-coming-soon)  
-**Dominio personalizado:** [https://ssdigi.store](https://ssdigi.store)
 
 ---
 
