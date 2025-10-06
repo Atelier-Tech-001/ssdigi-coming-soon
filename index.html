@@ -6,7 +6,13 @@
   <meta name="description" content="Algo se aproxima... LSSDIGI.">
   <meta property="og:title" content="Pronto... SSDIGI">
   <meta property="og:description" content="Algo está por llegar. No todos están listos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tusitio.com">
   <meta property="og:image" content="https://via.placeholder.com/1200x630/000000/FFFFFF?text=LSSDIGI+COMING+SOON">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pronto... SSDIGI">
+  <meta name="twitter:description" content="Algo está por llegar. No todos están listos.">
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630/000000/FFFFFF?text=LSSDIGI+COMING+SOON">
   <title>Pronto... SSDIGI</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
@@ -24,6 +30,23 @@
       overflow: hidden;
       text-align: center;
       transition: background 0.2s ease-in-out;
+    }
+
+    /* Scanlines CRT */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      z-index: 3;
+      pointer-events: none;
     }
 
     .container {
@@ -49,7 +72,7 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
-      animation: glitch 2s infinite;
+      animation: glitch 2s infinite, flicker 3s infinite alternate;
     }
 
     @keyframes glitch {
@@ -61,6 +84,11 @@
       100% { text-shadow: none; }
     }
 
+    @keyframes flicker {
+      from { opacity: 0.8; }
+      to { opacity: 1; }
+    }
+
     .countdown {
       font-size: 2rem;
       margin-bottom: 10px;
@@ -68,7 +96,7 @@
 
     .phrase {
       font-size: 1.2rem;
-      opacity: 0.7;
+      opacity: 0.85;
     }
 
     /* Efecto glitch final */
@@ -101,11 +129,6 @@
       opacity: 0.8;
       animation: flicker 0.2s infinite alternate;
     }
-
-    @keyframes flicker {
-      from { opacity: 0.1; }
-      to { opacity: 1; }
-    }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TQ0M021H58"></script>
@@ -113,61 +136,57 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-TQ0M021H58');
   </script>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script',' ','GTM-MZZW9HXR');</script>
-<!-- End Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script',' ','GTM-MZZW9HXR');</script>
+  <!-- End Google Tag Manager -->
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZZW9HXR"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript>
+    <style>body {background:black; color:white; text-align:center;}</style>
+    <h1>SSDIGI</h1>
+    <p>La cuenta atrás ha comenzado. Activa JavaScript para ver la experiencia completa.</p>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <div class="noise"></div>
   <div class="container">
     <h1>SSDIGI</h1>
-    <div class="countdown" id="countdown">Cargando...</div>
+    <div class="countdown" id="countdown" role="timer">Cargando cuenta regresiva...</div>
     <div class="phrase" id="phrase">Algo está por llegar...</div>
     <div class="hidden-message" id="hidden-message">LO QUE VES NO ES TODO...</div>
   </div>
 
   <script>
-  const phrases = [
+  const phrases = [...new Set([
     "El tiempo se agota...",
-      "No todos están listos...",
-      "LSSDIGI está cerca...",
-      "Vas a querer estar ahí...",
-      "El reloj no se detiene...",
-      "La cuenta atrás ha comenzado...",
-      "Prepárate para lo inesperado...",
-      "La revelación está cerca...",
-      "La verdad saldrá a la luz...",
-      "La espera está por terminar...",
-      "La tensión aumenta...",
-      "El caos se desata...",
-      "La locura se apodera de todo...",
-      "La realidad se distorsiona...",
-      "La verdad se oculta en las sombras...",
-      "La desesperación se apodera de todo...",
-      "La locura se apodera de todo...",
-      "La realidad se desmorona...",
-      "La verdad se oculta en las sombras...",
-      "La desesperación se apodera de todo...",
-      "La locura se apodera de todo...",
-      "La realidad se desmorona...",
-      "La verdad se oculta en las sombras...",
-      "La desesperación se apodera de todo...",
-      "Quizás anheles lo que no puedes tener...",
-      "Quizás antes de lo que imaginas..."
-  ];
-  
+    "No todos están listos...",
+    "LSSDIGI está cerca...",
+    "Vas a querer estar ahí...",
+    "El reloj no se detiene...",
+    "La cuenta atrás ha comenzado...",
+    "Prepárate para lo inesperado...",
+    "La revelación está cerca...",
+    "La verdad saldrá a la luz...",
+    "La espera está por terminar...",
+    "La tensión aumenta...",
+    "El caos se desata...",
+    "La locura se apodera de todo...",
+    "La realidad se distorsiona...",
+    "La verdad se oculta en las sombras...",
+    "La desesperación se apodera de todo...",
+    "La realidad se desmorona...",
+    "Quizás anheles lo que no puedes tener...",
+    "Quizás antes de lo que imaginas..."
+  ])];
+
   let lastPhraseIndex = -1;
+  let phraseInterval;
 
   function getRandomPhrase() {
     let index;
@@ -179,27 +198,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   // Render aleatorio cada 4 segundos
-  setInterval(() => {
+  phraseInterval = setInterval(() => {
     document.getElementById("phrase").textContent = getRandomPhrase();
   }, 4000);
 
   // Render inicial
   document.getElementById("phrase").textContent = getRandomPhrase();
 
-  // Fecha objetivo oficial:
-  const targetDate = new Date(Date.UTC(2038, 0, 19, 3, 14, 7));
-
-  // Fecha hardcodeada para pruebas (descomentar para ver el glitch en segundos)
-  // const targetDate = new Date(new Date().getTime() + 5000); // 5 segundos desde ahora
+  // Fecha objetivo: 01/01/2026 00:00:00 UTC
+  const targetDate = new Date(Date.UTC(2026, 0, 1, 0, 0, 0));
 
   let glitchActive = false;
 
   function startGlitchFinal() {
     glitchActive = true;
+    clearInterval(phraseInterval);
     document.body.classList.add("flash");
     const countdownElement = document.getElementById("countdown");
     countdownElement.classList.add("glitch-final");
-    document.getElementById("hidden-message").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("hidden-message").style.display = "block";
+    }, 2000);
 
     setInterval(() => {
       countdownElement.textContent = Array.from({length: 12}, () =>
@@ -230,7 +249,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   setInterval(updateCountdown, 1000);
   updateCountdown();
-</script>
-
+  </script>
 </body>
 </html>
